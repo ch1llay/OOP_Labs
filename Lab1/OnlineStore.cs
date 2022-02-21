@@ -8,13 +8,13 @@ namespace Lab1
 {
     class OnlineStore
     {
-        public string address;
-        public string title;
-        public int amountSoldProducts;
-        public int amountKindProducts;
+        public string  adress;
+        public string  title;
+        public int     amountSoldProducts;
+        public int     amountKindProducts;
         public decimal currentProfit;
-        public int amountOlineUsers;
-        public int amountRegUsers;
+        public int     amountOlineUsers;
+        public int     amountRegUsers;
 
         public OnlineStore() { }
         public OnlineStore(string title)
@@ -22,8 +22,15 @@ namespace Lab1
             this.title = title;
         }
 
-        public OnlineStore(string address, string title, int amountSoldProducts, int amountProducts, decimal currentProfit, int amountOlineUsers, int amountRegUsers) : this(address)
+        public OnlineStore(string adress, string title)
         {
+            this.adress = adress;
+            this.title = title;
+        }
+
+        public OnlineStore(string adress, string title, int amountSoldProducts, int amountProducts, decimal currentProfit, int amountOlineUsers, int amountRegUsers)
+        {
+            this.adress = adress;
             this.title = title;
             this.amountSoldProducts = amountSoldProducts;
             this.amountKindProducts = amountProducts;
@@ -35,7 +42,7 @@ namespace Lab1
         public override string ToString()
         {
             return $"Название интернет магазина {title}\n" +
-                $"Адрес интернет магазина {address}\n" +
+                $"Адрес интернет магазина {adress}\n" +
                 $"Количество проданных товаров {amountSoldProducts}\n" +
                 $"Количество различных товаров на сайте {amountKindProducts}\n" +
                 $"Текущая прибыль {currentProfit}\n" +
