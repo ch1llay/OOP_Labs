@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab2
+{
+    class OnlineStore
+    {
+        public static int     objectCount;
+        public string  adress;
+        public string  title;
+        public int     amountSoldProducts;
+        public int     amountKindProducts;
+        public decimal currentProfit;
+        public int     amountOlineUsers;
+        public int     amountRegUsers;
+
+        public OnlineStore() 
+        {
+            objectCount++;
+        }
+        public OnlineStore(string title)
+        {
+            objectCount++;
+            this.title = title;
+        }
+
+        public OnlineStore(string adress, string title)
+        {
+            objectCount++;
+            this.adress = adress;
+            this.title = title;
+        }
+
+        public OnlineStore(string adress, string title, int amountSoldProducts, int amountProducts, decimal currentProfit, int amountOlineUsers, int amountRegUsers)
+        {
+            objectCount++;
+            this.adress = adress;
+            this.title = title;
+            this.amountSoldProducts = amountSoldProducts;
+            this.amountKindProducts = amountProducts;
+            this.currentProfit = currentProfit;
+            this.amountOlineUsers = amountOlineUsers;
+            this.amountRegUsers = amountRegUsers;
+        }
+
+        public override string ToString()
+        {
+            return title;
+        }
+        public string ObjectToString()
+        {
+            return 
+                $"Название интернет магазина {title}\n" +
+                $"Адрес интернет магазина {adress}\n" +
+                $"Количество проданных товаров {amountSoldProducts}\n" +
+                $"Количество различных товаров на сайте {amountKindProducts}\n" +
+                $"Текущая прибыль {currentProfit}\n" +
+                $"Текущий онлайн пользователей {amountOlineUsers}\n" +
+                $"Количество зарегистрированных пользователей {amountOlineUsers}";
+        }
+        public void ShowAmoountOnline()
+        {
+            Console.WriteLine($"Текущий онлайн пользователей {amountOlineUsers}");
+        }
+
+    }
+}

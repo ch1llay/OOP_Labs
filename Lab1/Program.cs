@@ -91,11 +91,6 @@ namespace Lab1
                 }
             }
             
-            Console.WriteLine("Метод который реализует вывод одного поля");
-            onlineStore.ShowAmoountOnline();
-            
-            Console.WriteLine("Вывод параметра в 16 ричном виде");
-            Console.WriteLine(onlineStore.amountRegUsers.ToString("X2"));
 
 
         }

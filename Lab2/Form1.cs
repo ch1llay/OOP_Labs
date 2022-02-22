@@ -17,5 +17,32 @@ namespace Lab2
             InitializeComponent();
         }
 
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Add(new OnlineStore(addressTextBox.Text, titleTextBox.Text, (int)soldProductsNumericUpDown.Value, (int)amountKindNumericUpDown.Value, profitNumericUpDown.Value, (int)onlineNumericUpDown.Value, (int)regNumericUpDown.Value));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void amountKindNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("");
+            richTextBox1.Text = ((OnlineStore)(comboBox1.SelectedItem)).ToString();
+        }
     }
 }
