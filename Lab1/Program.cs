@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Lab1
 {
@@ -57,6 +58,10 @@ namespace Lab1
                         try
                         {
                             onlineStore.amountKindProducts = Convert.ToInt32(Console.ReadLine());
+                            if(onlineStore.amountKindProducts < 0)
+                            {
+                                throw new Exception();
+                            }
                             Console.WriteLine("изменения успешно сохранены");
                         }
                         catch(Exception ex)
@@ -69,6 +74,7 @@ namespace Lab1
                         try
                         {
                             onlineStore.currentProfit = Convert.ToDecimal(Console.ReadLine());
+                            
                             Console.WriteLine("изменения успешно сохранены");
                         }
                         catch (Exception ex)
@@ -80,7 +86,14 @@ namespace Lab1
                         Console.WriteLine("Введите новое название интернет магазина");
                         try
                         {
-                            onlineStore.title = Console.ReadLine();
+                            var s = Console.ReadLine();
+                            string pattern = @"[а-яА-Я]+";
+                            if (!Regex.IsMatch(s, pattern))
+                            {
+                                throw new Exception();
+                            }
+                            onlineStore.title = s;
+                            
                             Console.WriteLine("изменения успешно сохранены");
                         }
                         catch (Exception ex)

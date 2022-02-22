@@ -251,7 +251,9 @@ namespace Lab2
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Лабораторная работа № 2  Статические члены класса. Вариант 11 Интернет магазин Ча" +
     "паев Илья";

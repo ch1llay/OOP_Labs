@@ -46,11 +46,8 @@ namespace Lab2
             this.amountRegUsers = amountRegUsers;
         }
 
-        public override string ToString()
-        {
-            return title;
-        }
-        public string ObjectToString()
+
+        public string ToString()
         {
             return 
                 $"Название интернет магазина {title}\n" +
