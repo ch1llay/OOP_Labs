@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab2
+namespace Lab3
 {
     public partial class Form1 : Form
     {
@@ -17,7 +17,8 @@ namespace Lab2
         {
             InitializeComponent();
         }
-
+        
+        CompareForm compareForm1;
 
         Dictionary<string, OnlineStore> onlineStores = new Dictionary<string, OnlineStore>();
         private void Form1_Load(object sender, EventArgs e)
@@ -77,6 +78,29 @@ namespace Lab2
             richTextBox1.Text
                 = $"Количество созданных объектов: {OnlineStore.objectCount}\n"
                 + onlineStores[comboBox1.Text].ToString();
+        }
+
+        // удаление
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (onlineStores.ContainsKey(comboBox1.Text))
+            {
+                onlineStores.Remove(comboBox1.Text);
+                comboBox1.Items.Remove(comboBox1.Text);
+                richTextBox1.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Ошибка, такого элемента нет");
+            }
+        }
+
+
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            compareForm1 = new CompareForm();
+            compareForm1.Show();
         }
     }
 }

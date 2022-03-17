@@ -7,14 +7,17 @@ namespace Lab1
     {
         static void ShowMenu()
         {
-            Console.WriteLine(  "1 - вывести содержимое объекта\n" +
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("1 - вывести содержимое объекта\n" +
                                 "2 - вывести название поля\n" +
                                 "3 - вывести название поля через метод\n" +
                                 "4 - вывод поля в 16-ом виде\n" +
                                 "5 - изменение целочисленного поля количество видов товаров на сайте\n" +
                                 "6 - изменение вещественного поля текущая прибыль\n" +
-                                "7 - изменение строкового поля название интернет магазина\n"
+                                "7 - изменение строкового поля название интернет магазина\n" +
+                                "0 - выход из программы"
                                 );
+            Console.WriteLine("--------------------------------------");
         }
         static void Main(string[] args)
         {
@@ -39,7 +42,7 @@ namespace Lab1
                 switch (userInput)
                 {
                     case 1:
-                        Console.WriteLine("Вывод объекта через перегрузку ToString()");
+                        Console.WriteLine("Вывод объекта через перегрузку методо ToString()");
                         Console.WriteLine(onlineStore);
                         break;
                     case 2:
@@ -100,6 +103,12 @@ namespace Lab1
                         {
                             Console.WriteLine("Возникла ошибка");
                         }
+                        break;
+                    case 0:
+                        run = false;
+                        break;
+                    default:
+                        Console.WriteLine("ошибка в выборе пункта меню");
                         break;
                 }
             }

@@ -1,5 +1,5 @@
 ﻿
-namespace Lab2
+namespace Lab3
 {
     partial class Form1
     {
@@ -48,6 +48,8 @@ namespace Lab2
             this.profitNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.onlineNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.soldProductsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.amountKindNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profitNumericUpDown)).BeginInit();
@@ -68,10 +70,10 @@ namespace Lab2
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(748, 80);
+            this.richTextBox1.Location = new System.Drawing.Point(766, 121);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(433, 319);
+            this.richTextBox1.Size = new System.Drawing.Size(415, 278);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
@@ -226,11 +228,34 @@ namespace Lab2
             this.soldProductsNumericUpDown.Size = new System.Drawing.Size(150, 34);
             this.soldProductsNumericUpDown.TabIndex = 23;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(787, 409);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(369, 74);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Удалить объект";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(935, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(206, 108);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "Сгенерировать\r\n и провести сравнение";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 496);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.soldProductsNumericUpDown);
             this.Controls.Add(this.profitNumericUpDown);
             this.Controls.Add(this.onlineNumericUpDown);
@@ -255,8 +280,8 @@ namespace Lab2
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Лабораторная работа № 2  Статические члены класса. Вариант 11 Интернет магазин Ча" +
-    "паев Илья";
+            this.Text = "Лабораторная работа № 3. Использование коллекций. Вариант 11 Интернет магазин Чап" +
+    "аев Илья";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.amountKindNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regNumericUpDown)).EndInit();
@@ -289,6 +314,8 @@ namespace Lab2
         private System.Windows.Forms.NumericUpDown profitNumericUpDown;
         private System.Windows.Forms.NumericUpDown onlineNumericUpDown;
         private System.Windows.Forms.NumericUpDown soldProductsNumericUpDown;
+        private Button button1;
+        private Button button2;
     }
 }
 
