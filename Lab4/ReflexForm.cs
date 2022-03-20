@@ -9,17 +9,26 @@ namespace Lab4
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            void Fill(TreeNode node, Type type)
+            {
+                foreach (var member in type.GetMembers())
+                {
+                    node.Nodes.Add($"{member.MemberType} {member.Name}");
+                }
+            }
             TreeNode baseClassTreeNode = new TreeNode();
             baseClassTreeNode.Text = "Online Store";
+            Fill(baseClassTreeNode, typeof(OnlineStore));
             TreeNode musicClassTreeNode = new TreeNode();
             musicClassTreeNode.Text = "MusicInternetShop";
-/*            musicClassTreeNode.Nodes.Add();
-*/            // пройтись по всем полям, методам, свойствам класса, добавить как узлы
+            Fill(musicClassTreeNode, typeof(MusicInternetShop));
+            baseClassTreeNode.Nodes.Add(musicClassTreeNode);
             TreeNode hardwareClassTreeNode = new TreeNode();
             hardwareClassTreeNode.Text = "HardwareInternetShop";
-/*            hardwareClassTreeNode.Nodes.Add();
-*/            
-            // пройтись по всем полям, методам, свойствам класса, добавить как узлы
+            Fill(hardwareClassTreeNode, typeof(HardwareInternetShop));
+            baseClassTreeNode.Nodes.Add(hardwareClassTreeNode);
+            treeView1.Nodes.Add(baseClassTreeNode);
+
         }
     }
 }
