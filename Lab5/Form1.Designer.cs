@@ -32,8 +32,8 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // listView1
@@ -42,9 +42,9 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listView1.Location = new System.Drawing.Point(26, 23);
+            this.listView1.Location = new System.Drawing.Point(48, 22);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(736, 401);
+            this.listView1.Size = new System.Drawing.Size(728, 379);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -59,24 +59,27 @@
             this.columnHeader2.Text = "Цена продукта";
             this.columnHeader2.Width = 200;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Комментарий";
             this.columnHeader3.Width = 400;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(823, 413);
             this.Controls.Add(this.listView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "№ 5.  Полиморфизм. Переопределние операций. Вариант 11 Интернет магазин Чапаев Ил" +
+    "ья";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

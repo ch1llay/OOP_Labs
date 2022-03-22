@@ -56,9 +56,9 @@ namespace Lab4
                 $"Текущий онлайн пользователей {AmountOlineUsers}\n" +
                 $"Количество зарегистрированных пользователей {AmountOlineUsers}";
         }
-        public void ShowAmoountOnline()
+        public string ShowAmoountOnline()
         {
-            Console.WriteLine($"Текущий онлайн пользователей {AmountOlineUsers}");
+            return $"Текущий онлайн пользователей {AmountOlineUsers}";
         }
         abstract public string PlaceAnOrder();
 

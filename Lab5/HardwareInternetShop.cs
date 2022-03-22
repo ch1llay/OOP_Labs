@@ -8,6 +8,7 @@ namespace Lab5
 {
     class HardwareInternetShop : OnlineStore
     {
+
         public HardwareInternetShop(string title, string adress) : base(title, adress) { }
         public override string PlaceAnOrder()
         {

@@ -13,7 +13,9 @@ namespace Lab4
             {
                 foreach (var member in type.GetMembers())
                 {
-                    node.Nodes.Add($"{member.MemberType} {member.Name}");
+                    string memberType = $"{member.MemberType}";
+                    memberType = (memberType == "Method") ? "Метод" : memberType;
+                    node.Nodes.Add($"{memberType} {member.Name}");
                 }
             }
             TreeNode baseClassTreeNode = new TreeNode();

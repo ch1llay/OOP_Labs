@@ -9,18 +9,17 @@ namespace Lab5
     public class Product
     {
         Random random = new Random();
-        static int count = 1;
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public Product()
+        public Product(int count)
         {
             Name = $"Товар {count}";
             Price = (decimal)random.Next(10, 2000);
-            count++;
         }
     }
     public class OnlineStore
     {
+        
         string adress;
         public string Adress { get { return adress; } private set { adress = value; } }
         public List<Product> Products { get; set; } = new List<Product>();
@@ -30,6 +29,8 @@ namespace Lab5
         public int AmountKindProducts { get; private set; }
         public decimal CurrentProfit { get; private set; }
         public int AmountOlineUsers { get; private set; }
+
+        public int ProductCount { get; private set; }
         public int AmountRegUsers { get; private set; }
 
 
@@ -70,10 +71,11 @@ namespace Lab5
                 $"Текущий онлайн пользователей {AmountOlineUsers}\n" +
                 $"Количество зарегистрированных пользователей {AmountOlineUsers}";
         }
-        public void ShowAmoountOnline()
+        public string ShowAmoountOnline()
         {
-            Console.WriteLine($"Текущий онлайн пользователей {AmountOlineUsers}");
+            return $"Текущий онлайн пользователей {AmountOlineUsers}";
         }
+
         public virtual string PlaceAnOrder()
         {
             return "заказ в интеренет магазине оформлен";
@@ -81,6 +83,7 @@ namespace Lab5
         public static OnlineStore operator +(OnlineStore onlineStore, Product product)
         {
             onlineStore.Products.Add(product);
+            onlineStore.ProductCount++;
             return onlineStore;
         }
 
