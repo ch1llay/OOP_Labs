@@ -30,5 +30,10 @@ namespace Lab5
             item.SubItems.Add($"{onlineStore.PlaceAnOrder()}");
             listView1.Items.Add(item);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = !timer1.Enabled;
+        }
     }
 }

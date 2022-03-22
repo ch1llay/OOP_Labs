@@ -11,7 +11,7 @@ namespace Lab5
         public MusicInternetShop(string title, string adress) : base(title, adress) { }
         public override string PlaceAnOrder()
         {
-            return "Заказ в музыкльном магазине оформлен";
+            return "Заказ в музыкальном магазине оформлен";
         }
     }
 }

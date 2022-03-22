@@ -82,6 +82,7 @@ namespace Lab5
         }
         public static OnlineStore operator +(OnlineStore onlineStore, Product product)
         {
+            // при добалении считается какой-то по счету объект был добавлен для конкретного интернет магазина
             onlineStore.Products.Add(product);
             onlineStore.ProductCount++;
             return onlineStore;
