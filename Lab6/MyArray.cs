@@ -10,22 +10,30 @@ namespace Lab6
     {
         public ArrayException(string message) : base(message) { }
     }
-    class MyArray
+    class MyArray<T>
     {
         int N;
-        int[] array;
+        T[] array;
         public MyArray(int n)
         {
-            if(n < 0)
+            if (n < 0)
             {
                 throw new ArrayException("Размер массива должен быть неотрицательным");
             }
             N = n;
-            array = new int[N];
+            array = new T[N];
         }
-        public MyArray Copy(int size)
+        /// <summary>
+        /// копирует size элементов от начала
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns>
+        /// массив размером size
+        /// </returns>
+        public MyArray<T> Copy(int size)
         {
-            MyArray newArray = new MyArray(size);
+
+            MyArray<T> newArray = new MyArray<T>(size);
             for (int i = 0; i < Math.Min(N, size); i++)
             {
                 newArray[i] = array[i];
@@ -57,11 +65,19 @@ namespace Lab6
                 throw new ArrayException("выход за границы массива");
             }
         }
-        public int this[int n]
+        public T this[int n]
         {
             get
             {
-                return array[PrepareIndex(n)];
+                var el = array[PrepareIndex(n)];
+                if (el != null)
+                {
+                    return el;
+                }
+                else
+                {
+                    throw new ArrayException("взят не инициализованный объект");
+                }
             }
             set
             {

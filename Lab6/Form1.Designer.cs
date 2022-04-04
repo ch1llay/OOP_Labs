@@ -34,15 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.setupButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.number = new System.Windows.Forms.NumericUpDown();
+            this.getProductButton = new System.Windows.Forms.Button();
+            this.indexOfArrayOnUsing = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.usingButton = new System.Windows.Forms.Button();
-            this.indexOfArrayOnUsing = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sizeOfArray)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.indexOfArrayOnUsing)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +93,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(165, 25);
+            this.label1.Location = new System.Drawing.Point(104, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 15);
+            this.label1.Size = new System.Drawing.Size(298, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Задайте размер массива";
+            this.label1.Text = "Задайте максимальное количество товаров на сайте";
             // 
             // setupButton
             // 
@@ -112,8 +111,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.getProductButton);
             this.tabPage2.Controls.Add(this.indexOfArrayOnUsing);
-            this.tabPage2.Controls.Add(this.number);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.usingButton);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
@@ -124,50 +123,19 @@
             this.tabPage2.Text = "Using";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // number
+            // getProductButton
             // 
-            this.number.Location = new System.Drawing.Point(63, 88);
-            this.number.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.number.Minimum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            -2147483648});
-            this.number.Name = "number";
-            this.number.Size = new System.Drawing.Size(140, 23);
-            this.number.TabIndex = 5;
-            this.number.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(222, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "добавить элемент по индексу в массив";
-            // 
-            // usingButton
-            // 
-            this.usingButton.Location = new System.Drawing.Point(161, 128);
-            this.usingButton.Name = "usingButton";
-            this.usingButton.Size = new System.Drawing.Size(140, 23);
-            this.usingButton.TabIndex = 3;
-            this.usingButton.Text = "Задать";
-            this.usingButton.UseVisualStyleBackColor = true;
-            this.usingButton.Click += new System.EventHandler(this.usingButton_Click);
+            this.getProductButton.Location = new System.Drawing.Point(63, 127);
+            this.getProductButton.Name = "getProductButton";
+            this.getProductButton.Size = new System.Drawing.Size(140, 23);
+            this.getProductButton.TabIndex = 7;
+            this.getProductButton.Text = "Получить";
+            this.getProductButton.UseVisualStyleBackColor = true;
+            this.getProductButton.Click += new System.EventHandler(this.getProductButton_Click);
             // 
             // indexOfArrayOnUsing
             // 
-            this.indexOfArrayOnUsing.Location = new System.Drawing.Point(287, 88);
+            this.indexOfArrayOnUsing.Location = new System.Drawing.Point(129, 87);
             this.indexOfArrayOnUsing.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -179,13 +147,32 @@
             0,
             -2147483648});
             this.indexOfArrayOnUsing.Name = "indexOfArrayOnUsing";
-            this.indexOfArrayOnUsing.Size = new System.Drawing.Size(140, 23);
+            this.indexOfArrayOnUsing.Size = new System.Drawing.Size(212, 23);
             this.indexOfArrayOnUsing.TabIndex = 6;
             this.indexOfArrayOnUsing.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(165, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 45);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "добавить продукт \r\nсо случайными данными \r\nпо индексу в массив";
+            // 
+            // usingButton
+            // 
+            this.usingButton.Location = new System.Drawing.Point(287, 127);
+            this.usingButton.Name = "usingButton";
+            this.usingButton.Size = new System.Drawing.Size(140, 23);
+            this.usingButton.TabIndex = 3;
+            this.usingButton.Text = "Задать";
+            this.usingButton.UseVisualStyleBackColor = true;
+            this.usingButton.Click += new System.EventHandler(this.usingPutButton_Click);
             // 
             // Form1
             // 
@@ -202,7 +189,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sizeOfArray)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.number)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.indexOfArrayOnUsing)).EndInit();
             this.ResumeLayout(false);
 
@@ -216,9 +202,9 @@
         private Label label1;
         private Button setupButton;
         private TabPage tabPage2;
-        private NumericUpDown number;
         private Label label2;
         private NumericUpDown indexOfArrayOnUsing;
         private Button usingButton;
+        private Button getProductButton;
     }
 }
