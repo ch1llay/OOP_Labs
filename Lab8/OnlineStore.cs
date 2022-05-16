@@ -61,7 +61,7 @@ namespace Lab8
         }
 
 
-        public string ToString()
+        public override string ToString()
         {
             return
                 $"Название интернет магазина {title}\n" +

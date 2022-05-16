@@ -121,7 +121,7 @@ namespace Lab8
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 231);
+            this.label3.Location = new System.Drawing.Point(9, 235);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 42);
@@ -151,7 +151,7 @@ namespace Lab8
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(-13, 168);
+            this.label6.Location = new System.Drawing.Point(2, 168);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 63);
