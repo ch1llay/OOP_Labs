@@ -8,73 +8,42 @@ namespace Lab8
 {
     class OnlineStore
     {
-        public static int objectCount;
-        public string adress
+
+        public string Address { get; set; }
+        public string Title { get; set; }
+        public int AmountSoldProducts { get; set; }
+        public int AmountKindProducts { get; set; }
+        public decimal AurrentProfit { get; set; }
+        public int AmountRegUsers { get; set; }
+        public MyList<Product> Products;
+
+        public OnlineStore(string adress, string title, int amountSoldProducts, int amountRegUsers)
         {
-            get { return adress; }
-            set
+            Title = title;
+            AmountSoldProducts = amountSoldProducts;
+            this.AmountRegUsers = amountRegUsers;
+            Products = new MyList<Product>();
+        }
+
+        private string GetProducts()
+        {
+            var stringBuilder = new StringBuilder();
+            foreach (var product in Products)
             {
-                if (string.IsNullOrEmpty(value)){
-                    adress = string.Empty;
-                }
-                adress = value;
+                stringBuilder.Append(product.ToString() + "\n");
             }
+            return stringBuilder.ToString();
         }
-
-        public string title;
-        public int amountSoldProducts;
-        public int amountKindProducts;
-        public decimal currentProfit;
-        public int amountOlineUsers;
-        public int amountRegUsers;
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OnlineStore()
-        {
-            objectCount++;
-        }
-        public OnlineStore(string title)
-        {
-            objectCount++;
-            this.title = title;
-        }
-
-        public OnlineStore(string adress, string title)
-        {
-            objectCount++;
-            this.adress = adress;
-            this.title = title;
-        }
-
-        public OnlineStore(string adress, string title, int amountSoldProducts, decimal currentProfit, int amountOlineUsers, int amountRegUsers)
-        {
-            objectCount++;
-            this.adress = adress;
-            this.title = title;
-            this.amountSoldProducts = amountSoldProducts;
-            this.currentProfit = currentProfit;
-            this.amountOlineUsers = amountOlineUsers;
-            this.amountRegUsers = amountRegUsers;
-        }
-
-
         public override string ToString()
         {
             return
-                $"Название интернет магазина {title}\n" +
-                $"Адрес интернет магазина {adress}\n" +
-                $"Количество проданных товаров {amountSoldProducts}\n" +
-                $"Количество различных товаров на сайте {amountKindProducts}\n" +
-                $"Текущая прибыль {currentProfit}\n" +
-                $"Текущий онлайн пользователей {amountOlineUsers}\n" +
-                $"Количество зарегистрированных пользователей {amountOlineUsers}";
-        }
-        public void ShowAmoountOnline()
-        {
-            Console.WriteLine($"Текущий онлайн пользователей {amountOlineUsers}");
+                $"Название интернет магазина {Title}\n" +
+                $"Адрес интернет магазина {Address}\n" +
+                $"Количество проданных товаров {AmountSoldProducts}\n" +
+                $"Количество зарегистрированных пользователей {AmountRegUsers}" +
+                $"Количество различных товаров на сайте {AmountKindProducts}\n" +
+                $"Продукты\n{GetProducts}";
+
         }
 
     }

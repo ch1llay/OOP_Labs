@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,16 @@ using System.Threading.Tasks;
 
 namespace Lab8
 {
-    class MyList<T> : IDisposable where T : class
+    class MyList<T> : IDisposable,IEnumerable, ICollection<T> where T : class
     {
         public List<T> Items { get; set; }
-        public int Count { get; set; }
+
+        public int Count { get; private set; }
+
+        public bool IsReadOnly { get; set; }
+
+
+        // public int Count { get; set; }
         public MyList()
         {
             Items = new List<T>();
@@ -19,7 +26,7 @@ namespace Lab8
         {
             Items.Add(item);
         }
-        public void Delete(int index)
+        public void RemoveAt(int index)
         {
             Items.RemoveAt(index);
         }
@@ -27,6 +34,37 @@ namespace Lab8
         {
             Items.Clear();
         }
+
+        public void Clear()
+        {
+            Items.Clear();
+        }
+
+        public bool Contains(T item)
+        {
+            return Items.Contains(item);
+        }
+
+        public void CopyTo(T[] array, int arrayIndex)
+        {
+            Items.CopyTo(array, arrayIndex);
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return Items.GetEnumerator();
+        }
+
+        public bool Remove(T item)
+        {
+            return Items.Remove(item);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
         ~MyList()
         {
             Items.Clear();
