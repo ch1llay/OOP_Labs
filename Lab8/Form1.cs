@@ -101,7 +101,7 @@ namespace Lab8
         {
             MessageBox.Show("");
            var products = onlineStores[onlineStoresComboBox.Text].Products;
-           var product = products.First(x => x.Name == productName.Text);
+           var product = products.First(x => x.Name == productsComboBox.Text);
            productName.Text = product.Name;
            productPrice.Value = product.Price;
         }
@@ -168,7 +168,7 @@ namespace Lab8
         private void addProductButton_Click(object sender, EventArgs e)
         {
 
-            if (onlineStores.Keys.Contains(titleTextBox.Text))
+            if (onlineStores.Keys.Contains(onlineStoresComboBox.Text) )
             {
                 if (Regex.IsMatch(productName.Text, @"[а-яa-z]+\d*", RegexOptions.IgnoreCase))
                 {
