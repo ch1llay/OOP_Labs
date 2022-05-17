@@ -99,10 +99,11 @@ namespace Lab8
 
         private void productsCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var item = onlineStores[onlineStoresComboBox.Text];
-            addressTextBox.Text = item.Address;
-            titleTextBox.Text = item.Title;
-            regNumericUpDown.Value = item.AmountRegUsers;
+            MessageBox.Show("");
+           var products = onlineStores[onlineStoresComboBox.Text].Products;
+           var product = products.First(x => x.Name == productName.Text);
+           productName.Text = product.Name;
+           productPrice.Value = product.Price;
         }
 
         private void button6_Click(object sender, EventArgs e)
