@@ -36,7 +36,6 @@ namespace Lab8
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.onlineStoresComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.addOnlineStoreButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -44,7 +43,7 @@ namespace Lab8
             this.soldProductsNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.deleteOnlineStoreButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.productsCombobox = new System.Windows.Forms.ComboBox();
+            this.productsComboBox = new System.Windows.Forms.ComboBox();
             this.productName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.productPrice = new System.Windows.Forms.NumericUpDown();
@@ -59,6 +58,8 @@ namespace Lab8
             this.label11 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.onlineStoresComboBox = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.regNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soldProductsNumericUpDown)).BeginInit();
@@ -71,13 +72,14 @@ namespace Lab8
             // 
             // editOnlineStoreButton
             // 
-            this.editOnlineStoreButton.Location = new System.Drawing.Point(222, 226);
+            this.editOnlineStoreButton.Location = new System.Drawing.Point(4, 318);
             this.editOnlineStoreButton.Margin = new System.Windows.Forms.Padding(4);
             this.editOnlineStoreButton.Name = "editOnlineStoreButton";
-            this.editOnlineStoreButton.Size = new System.Drawing.Size(210, 51);
+            this.editOnlineStoreButton.Size = new System.Drawing.Size(356, 51);
             this.editOnlineStoreButton.TabIndex = 0;
             this.editOnlineStoreButton.Text = "Редактировать интернет магазин";
             this.editOnlineStoreButton.UseVisualStyleBackColor = true;
+            this.editOnlineStoreButton.Click += new System.EventHandler(this.editOnlineStoreButton_Click);
             // 
             // richTextBox1
             // 
@@ -110,7 +112,7 @@ namespace Lab8
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 96);
+            this.label2.Location = new System.Drawing.Point(31, 105);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 63);
@@ -121,7 +123,7 @@ namespace Lab8
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 159);
+            this.label4.Location = new System.Drawing.Point(4, 183);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 63);
@@ -137,13 +139,6 @@ namespace Lab8
             this.addressTextBox.Size = new System.Drawing.Size(170, 29);
             this.addressTextBox.TabIndex = 10;
             // 
-            // onlineStoresComboBox
-            // 
-            this.onlineStoresComboBox.Location = new System.Drawing.Point(17, 57);
-            this.onlineStoresComboBox.Name = "onlineStoresComboBox";
-            this.onlineStoresComboBox.Size = new System.Drawing.Size(403, 29);
-            this.onlineStoresComboBox.TabIndex = 15;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -156,10 +151,10 @@ namespace Lab8
             // 
             // addOnlineStoreButton
             // 
-            this.addOnlineStoreButton.Location = new System.Drawing.Point(7, 226);
+            this.addOnlineStoreButton.Location = new System.Drawing.Point(7, 253);
             this.addOnlineStoreButton.Margin = new System.Windows.Forms.Padding(4);
             this.addOnlineStoreButton.Name = "addOnlineStoreButton";
-            this.addOnlineStoreButton.Size = new System.Drawing.Size(207, 51);
+            this.addOnlineStoreButton.Size = new System.Drawing.Size(349, 51);
             this.addOnlineStoreButton.TabIndex = 17;
             this.addOnlineStoreButton.Text = "Добавить интернет магазин";
             this.addOnlineStoreButton.UseVisualStyleBackColor = true;
@@ -178,7 +173,7 @@ namespace Lab8
             // 
             // regNumericUpDown
             // 
-            this.regNumericUpDown.Location = new System.Drawing.Point(186, 159);
+            this.regNumericUpDown.Location = new System.Drawing.Point(190, 192);
             this.regNumericUpDown.Name = "regNumericUpDown";
             this.regNumericUpDown.Size = new System.Drawing.Size(170, 29);
             this.regNumericUpDown.TabIndex = 21;
@@ -192,35 +187,36 @@ namespace Lab8
             // 
             // deleteOnlineStoreButton
             // 
-            this.deleteOnlineStoreButton.Location = new System.Drawing.Point(437, 225);
+            this.deleteOnlineStoreButton.Location = new System.Drawing.Point(4, 392);
             this.deleteOnlineStoreButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteOnlineStoreButton.Name = "deleteOnlineStoreButton";
-            this.deleteOnlineStoreButton.Size = new System.Drawing.Size(212, 49);
+            this.deleteOnlineStoreButton.Size = new System.Drawing.Size(349, 49);
             this.deleteOnlineStoreButton.TabIndex = 24;
             this.deleteOnlineStoreButton.Text = "Удалить интернет магазин";
             this.deleteOnlineStoreButton.UseVisualStyleBackColor = true;
+            this.deleteOnlineStoreButton.Click += new System.EventHandler(this.deleteOnlineStoreButton_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(830, 7);
+            this.label5.Location = new System.Drawing.Point(538, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 21);
+            this.label5.Size = new System.Drawing.Size(63, 21);
             this.label5.TabIndex = 27;
-            this.label5.Text = "Продукты";
+            this.label5.Text = "Товары";
             // 
-            // productsCombobox
+            // productsComboBox
             // 
-            this.productsCombobox.Location = new System.Drawing.Point(728, 31);
-            this.productsCombobox.Name = "productsCombobox";
-            this.productsCombobox.Size = new System.Drawing.Size(292, 29);
-            this.productsCombobox.TabIndex = 26;
-            this.productsCombobox.SelectedIndexChanged += new System.EventHandler(this.productsCombobox_SelectedIndexChanged);
+            this.productsComboBox.Location = new System.Drawing.Point(436, 24);
+            this.productsComboBox.Name = "productsComboBox";
+            this.productsComboBox.Size = new System.Drawing.Size(292, 29);
+            this.productsComboBox.TabIndex = 26;
+            this.productsComboBox.SelectedIndexChanged += new System.EventHandler(this.productsCombobox_SelectedIndexChanged);
             // 
             // productName
             // 
-            this.productName.Location = new System.Drawing.Point(830, 80);
+            this.productName.Location = new System.Drawing.Point(538, 102);
             this.productName.Margin = new System.Windows.Forms.Padding(4);
             this.productName.Name = "productName";
             this.productName.Size = new System.Drawing.Size(170, 29);
@@ -230,7 +226,7 @@ namespace Lab8
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(728, 80);
+            this.label9.Location = new System.Drawing.Point(436, 102);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 42);
@@ -240,7 +236,7 @@ namespace Lab8
             // 
             // productPrice
             // 
-            this.productPrice.Location = new System.Drawing.Point(830, 127);
+            this.productPrice.Location = new System.Drawing.Point(545, 166);
             this.productPrice.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -263,7 +259,7 @@ namespace Lab8
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(723, 135);
+            this.label10.Location = new System.Drawing.Point(436, 174);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 21);
@@ -273,33 +269,36 @@ namespace Lab8
             // 
             // addProductButton
             // 
-            this.addProductButton.Location = new System.Drawing.Point(651, 225);
+            this.addProductButton.Location = new System.Drawing.Point(429, 250);
             this.addProductButton.Margin = new System.Windows.Forms.Padding(4);
             this.addProductButton.Name = "addProductButton";
-            this.addProductButton.Size = new System.Drawing.Size(190, 40);
+            this.addProductButton.Size = new System.Drawing.Size(314, 54);
             this.addProductButton.TabIndex = 32;
             this.addProductButton.Text = "Добавить товар";
             this.addProductButton.UseVisualStyleBackColor = true;
+            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
             // 
             // editProductButton
             // 
-            this.editProductButton.Location = new System.Drawing.Point(840, 225);
+            this.editProductButton.Location = new System.Drawing.Point(429, 312);
             this.editProductButton.Margin = new System.Windows.Forms.Padding(4);
             this.editProductButton.Name = "editProductButton";
-            this.editProductButton.Size = new System.Drawing.Size(190, 40);
+            this.editProductButton.Size = new System.Drawing.Size(314, 57);
             this.editProductButton.TabIndex = 33;
             this.editProductButton.Text = "Редактировать товар";
             this.editProductButton.UseVisualStyleBackColor = true;
+            this.editProductButton.Click += new System.EventHandler(this.editProductButton_Click);
             // 
             // deleteProductButton
             // 
-            this.deleteProductButton.Location = new System.Drawing.Point(1025, 225);
+            this.deleteProductButton.Location = new System.Drawing.Point(429, 392);
             this.deleteProductButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteProductButton.Name = "deleteProductButton";
-            this.deleteProductButton.Size = new System.Drawing.Size(205, 39);
+            this.deleteProductButton.Size = new System.Drawing.Size(307, 49);
             this.deleteProductButton.TabIndex = 34;
             this.deleteProductButton.Text = "Удалить товар";
             this.deleteProductButton.UseVisualStyleBackColor = true;
+            this.deleteProductButton.Click += new System.EventHandler(this.deleteProductButton_Click);
             // 
             // findOnlineStoreByAmountProductsButton
             // 
@@ -357,11 +356,13 @@ namespace Lab8
             this.tabControl1.Location = new System.Drawing.Point(12, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1245, 416);
+            this.tabControl1.Size = new System.Drawing.Size(1001, 482);
             this.tabControl1.TabIndex = 41;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.onlineStoresComboBox);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.titleTextBox);
             this.tabPage1.Controls.Add(this.label2);
@@ -378,30 +379,47 @@ namespace Lab8
             this.tabPage1.Controls.Add(this.editOnlineStoreButton);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.productPrice);
-            this.tabPage1.Controls.Add(this.productsCombobox);
+            this.tabPage1.Controls.Add(this.productsComboBox);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.productName);
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1237, 382);
+            this.tabPage1.Size = new System.Drawing.Size(993, 448);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Добавление";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(782, 3);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 21);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Интернет магазины";
+            // 
+            // onlineStoresComboBox
+            // 
+            this.onlineStoresComboBox.Location = new System.Drawing.Point(768, 27);
+            this.onlineStoresComboBox.Name = "onlineStoresComboBox";
+            this.onlineStoresComboBox.Size = new System.Drawing.Size(202, 29);
+            this.onlineStoresComboBox.TabIndex = 35;
+            this.onlineStoresComboBox.SelectedIndexChanged += new System.EventHandler(this.onlineStoresComboBox_SelectedIndexChanged);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.richTextBox1);
-            this.tabPage2.Controls.Add(this.onlineStoresComboBox);
             this.tabPage2.Controls.Add(this.findOnlineStoreByMaxAmountProductsButton);
             this.tabPage2.Controls.Add(this.findOnlineStoreByMinAmountProductsButton);
             this.tabPage2.Controls.Add(this.findOnlineStoreByAmountProductsButton);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1237, 388);
+            this.tabPage2.Size = new System.Drawing.Size(993, 454);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Поиск";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -410,7 +428,7 @@ namespace Lab8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1747, 829);
+            this.ClientSize = new System.Drawing.Size(1043, 493);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.amountProductsForSearch);
@@ -444,7 +462,6 @@ namespace Lab8
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox addressTextBox;
-        private System.Windows.Forms.ComboBox onlineStoresComboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button addOnlineStoreButton;
         private System.Windows.Forms.Label label8;
@@ -452,7 +469,7 @@ namespace Lab8
         private System.Windows.Forms.NumericUpDown soldProductsNumericUpDown;
         private Button deleteOnlineStoreButton;
         private Label label5;
-        private ComboBox productsCombobox;
+        private ComboBox productsComboBox;
         private TextBox productName;
         private Label label9;
         private NumericUpDown productPrice;
@@ -468,6 +485,8 @@ namespace Lab8
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
+        private Label label3;
+        private ComboBox onlineStoresComboBox;
     }
 }
 

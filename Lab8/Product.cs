@@ -8,14 +8,15 @@ namespace Lab8
 {
     class Product
     {
-        Random random = new Random();
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public Product(int number)
+
+        public Product(string name, decimal price)
         {
-            Name = $"Товар {number}";
-            Price = (decimal)random.Next(10, 2000);
+            Name = name;
+            Price = price;
         }
+
         public override string ToString()
         {
             return $"{Name}\nЦена {Price}";
