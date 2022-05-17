@@ -7,20 +7,24 @@ using System.Threading.Tasks;
 
 namespace Lab8
 {
-    class MyList<T> : IDisposable,IEnumerable, ICollection<T> where T : class
+    class MyList<T> : IDisposable, IEnumerable, ICollection<T> where T : class
     {
         public List<T> Items { get; set; }
 
-        public int Count { get; private set; }
+        public int Count { get => Items.Count; }
 
         public bool IsReadOnly { get; set; }
+        public T this[int index]
+        {
+            get => Items[index];
+            set => Items[index] = value;
+        }
 
 
         // public int Count { get; set; }
         public MyList()
         {
             Items = new List<T>();
-            Count = 0;
         }
         public void Add(T item)
         {
@@ -64,6 +68,8 @@ namespace Lab8
         {
             throw new NotImplementedException();
         }
+
+
 
         ~MyList()
         {

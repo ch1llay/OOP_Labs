@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab8
 {
-    class OnlineStore
+    class OnlineStore : IComparable<MyList<Product>>
     {
 
         public string Address { get; set; }
@@ -42,9 +42,14 @@ namespace Lab8
                 $"Количество проданных товаров {AmountSoldProducts}\n" +
                 $"Количество зарегистрированных пользователей {AmountRegUsers}" +
                 $"Количество различных товаров на сайте {AmountKindProducts}\n" +
-                $"Продукты\n{GetProducts}";
+                $"Продукты\n{GetProducts()}";
 
         }
 
+
+        public int CompareTo(MyList<Product>? other)
+        {
+            return Products.Count - other.Count;
+        }
     }
 }
