@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab8
 {
+    [Serializable]
     class MyList<T> : IDisposable, IEnumerable, ICollection<T> where T : class
     {
         public List<T> Items { get; set; }
@@ -66,10 +67,8 @@ namespace Lab8
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return Items.GetEnumerator();
         }
-
-
 
         ~MyList()
         {

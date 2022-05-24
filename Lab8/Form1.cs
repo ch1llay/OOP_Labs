@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,8 +21,6 @@ namespace Lab8
         {
             InitializeComponent();
         }
-
-
         Dictionary<string, OnlineStore> onlineStores = new Dictionary<string, OnlineStore>();
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -54,7 +56,7 @@ namespace Lab8
                 onlineStores[onlineStoresComboBox.Text].Address = addressTextBox.Text;
                 onlineStores[onlineStoresComboBox.Text].AmountSoldProducts = (int)soldProductsNumericUpDown.Value;
                 onlineStores[onlineStoresComboBox.Text].AmountRegUsers = (int)regNumericUpDown.Value;
-                richTextBox1.Text = onlineStores[onlineStoresComboBox.Text].ToString();
+                onlineStoreRichBox.Text = onlineStores[onlineStoresComboBox.Text].ToString();
             }
             else
             {
@@ -78,7 +80,7 @@ namespace Lab8
             {
                 onlineStores.Remove(onlineStoresComboBox.Text);
                 onlineStoresComboBox.Items.Remove(onlineStoresComboBox.Text);
-                richTextBox1.Text = "";
+                onlineStoreRichBox.Text = "";
             }
             else
             {
@@ -142,7 +144,7 @@ namespace Lab8
             {
                 onlineStores.Remove(onlineStoresComboBox.Text);
                 onlineStoresComboBox.Items.Remove(onlineStoresComboBox.Text);
-                richTextBox1.Text = "";
+                onlineStoreRichBox.Text = "";
             }
             else
             {
@@ -157,7 +159,7 @@ namespace Lab8
                 onlineStores[onlineStoresComboBox.Text].Address = addressTextBox.Text;
                 onlineStores[onlineStoresComboBox.Text].AmountSoldProducts = (int)soldProductsNumericUpDown.Value;
                 onlineStores[onlineStoresComboBox.Text].AmountRegUsers = (int)regNumericUpDown.Value;
-                richTextBox1.Text = onlineStores[onlineStoresComboBox.Text].ToString();
+                onlineStoreRichBox.Text = onlineStores[onlineStoresComboBox.Text].ToString();
             }
             else
             {
@@ -231,6 +233,41 @@ namespace Lab8
             addressTextBox.Text = item.Address;
             titleTextBox.Text = item.Title;
             regNumericUpDown.Value = item.AmountRegUsers;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveToFileButton_Click(object sender, EventArgs e)
+        {
+            JsonSerializerOptions options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true
+            };
+            string json = JsonConvert.SerializeObject(onlineStores);
+            //byte[] bytes = Encoding.Default.GetBytes(json);
+            //json = Encoding.UTF8.GetString(bytes);
+            onlineStoreRichBox.Text = json;
+            File.WriteAllText("file.json", json, Encoding.UTF8);
+            
         }
     }
 }

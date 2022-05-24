@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab8
 {
-    class Product
+    [Serializable]
+        class Product
     {
         public string Name { get; set; }
         public decimal Price { get; set; }

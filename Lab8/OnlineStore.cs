@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab8
 {
+    [Serializable]
     class OnlineStore : IComparable<MyList<Product>>
     {
 
