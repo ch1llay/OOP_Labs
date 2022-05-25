@@ -18,6 +18,7 @@ namespace Lab8
         public int AmountRegUsers { get; set; }
         public MyList<Product> Products;
 
+        public OnlineStore() { }
         public OnlineStore(string adress, string title, int amountSoldProducts, int amountRegUsers)
         {
             Title = title;
@@ -43,7 +44,7 @@ namespace Lab8
                 $"Количество проданных товаров {AmountSoldProducts}\n" +
                 $"Количество зарегистрированных пользователей {AmountRegUsers}" +
                 $"Количество различных товаров на сайте {AmountKindProducts}\n" +
-                $"Продукты\n{GetProducts()}";
+                $"Продукты\np{GetProducts()}";
 
         }
 

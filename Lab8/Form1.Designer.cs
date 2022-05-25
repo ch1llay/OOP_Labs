@@ -87,10 +87,10 @@ namespace Lab8
             // 
             // onlineStoreRichBox
             // 
-            this.onlineStoreRichBox.Location = new System.Drawing.Point(16, 93);
+            this.onlineStoreRichBox.Location = new System.Drawing.Point(16, 44);
             this.onlineStoreRichBox.Margin = new System.Windows.Forms.Padding(4);
             this.onlineStoreRichBox.Name = "onlineStoreRichBox";
-            this.onlineStoreRichBox.Size = new System.Drawing.Size(404, 189);
+            this.onlineStoreRichBox.Size = new System.Drawing.Size(527, 238);
             this.onlineStoreRichBox.TabIndex = 1;
             this.onlineStoreRichBox.Text = "";
             this.onlineStoreRichBox.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -150,9 +150,9 @@ namespace Lab8
             this.label7.Location = new System.Drawing.Point(17, 19);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 21);
+            this.label7.Size = new System.Drawing.Size(106, 21);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Интернет магазины";
+            this.label7.Text = "Информация";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // addOnlineStoreButton
@@ -308,20 +308,21 @@ namespace Lab8
             // 
             // findOnlineStoreByAmountProductsButton
             // 
-            this.findOnlineStoreByAmountProductsButton.Location = new System.Drawing.Point(16, 290);
+            this.findOnlineStoreByAmountProductsButton.Location = new System.Drawing.Point(7, 290);
             this.findOnlineStoreByAmountProductsButton.Margin = new System.Windows.Forms.Padding(4);
             this.findOnlineStoreByAmountProductsButton.Name = "findOnlineStoreByAmountProductsButton";
-            this.findOnlineStoreByAmountProductsButton.Size = new System.Drawing.Size(216, 75);
+            this.findOnlineStoreByAmountProductsButton.Size = new System.Drawing.Size(188, 100);
             this.findOnlineStoreByAmountProductsButton.TabIndex = 35;
             this.findOnlineStoreByAmountProductsButton.Text = "Найти интернет магазины по количеству товаров в них";
             this.findOnlineStoreByAmountProductsButton.UseVisualStyleBackColor = true;
+            this.findOnlineStoreByAmountProductsButton.Click += new System.EventHandler(this.findOnlineStoreByAmountProductsButton_Click);
             // 
             // findOnlineStoreByMaxAmountProductsButton
             // 
-            this.findOnlineStoreByMaxAmountProductsButton.Location = new System.Drawing.Point(464, 291);
+            this.findOnlineStoreByMaxAmountProductsButton.Location = new System.Drawing.Point(399, 291);
             this.findOnlineStoreByMaxAmountProductsButton.Margin = new System.Windows.Forms.Padding(4);
             this.findOnlineStoreByMaxAmountProductsButton.Name = "findOnlineStoreByMaxAmountProductsButton";
-            this.findOnlineStoreByMaxAmountProductsButton.Size = new System.Drawing.Size(216, 75);
+            this.findOnlineStoreByMaxAmountProductsButton.Size = new System.Drawing.Size(168, 99);
             this.findOnlineStoreByMaxAmountProductsButton.TabIndex = 36;
             this.findOnlineStoreByMaxAmountProductsButton.Text = "Найти интернет\r\nмагазин с наибольшим\r\nчислом товаров";
             this.findOnlineStoreByMaxAmountProductsButton.UseVisualStyleBackColor = true;
@@ -329,13 +330,14 @@ namespace Lab8
             // 
             // findOnlineStoreByMinAmountProductsButton
             // 
-            this.findOnlineStoreByMinAmountProductsButton.Location = new System.Drawing.Point(240, 291);
+            this.findOnlineStoreByMinAmountProductsButton.Location = new System.Drawing.Point(203, 290);
             this.findOnlineStoreByMinAmountProductsButton.Margin = new System.Windows.Forms.Padding(4);
             this.findOnlineStoreByMinAmountProductsButton.Name = "findOnlineStoreByMinAmountProductsButton";
-            this.findOnlineStoreByMinAmountProductsButton.Size = new System.Drawing.Size(216, 75);
+            this.findOnlineStoreByMinAmountProductsButton.Size = new System.Drawing.Size(188, 100);
             this.findOnlineStoreByMinAmountProductsButton.TabIndex = 37;
             this.findOnlineStoreByMinAmountProductsButton.Text = "Найти интернет\r\nмагазин с наименьшим числом товаров";
             this.findOnlineStoreByMinAmountProductsButton.UseVisualStyleBackColor = true;
+            this.findOnlineStoreByMinAmountProductsButton.Click += new System.EventHandler(this.findOnlineStoreByMinAmountProductsButton_Click);
             // 
             // amountProductsForSearch
             // 
@@ -449,7 +451,7 @@ namespace Lab8
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(450, 125);
+            this.label6.Location = new System.Drawing.Point(586, 116);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(238, 21);
@@ -458,7 +460,7 @@ namespace Lab8
             // 
             // amountProductForSearch
             // 
-            this.amountProductForSearch.Location = new System.Drawing.Point(450, 178);
+            this.amountProductForSearch.Location = new System.Drawing.Point(586, 169);
             this.amountProductForSearch.Name = "amountProductForSearch";
             this.amountProductForSearch.Size = new System.Drawing.Size(201, 29);
             this.amountProductForSearch.TabIndex = 38;

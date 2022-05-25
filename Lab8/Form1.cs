@@ -101,15 +101,15 @@ namespace Lab8
 
         private void productsCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("");
-           var products = onlineStores[onlineStoresComboBox.Text].Products;
-           var product = products.First(x => x.Name == productsComboBox.Text);
-           productName.Text = product.Name;
-           productPrice.Value = product.Price;
+            var products = onlineStores[onlineStoresComboBox.Text].Products;
+            var product = products.First(x => x.Name == productsComboBox.Text);
+            productName.Text = product.Name;
+            productPrice.Value = product.Price;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            onlineStoreRichBox.Text = onlineStores.Values.OrderBy(x => x.Products.Count).Max(x => x).ToString();
 
         }
 
@@ -170,7 +170,7 @@ namespace Lab8
         private void addProductButton_Click(object sender, EventArgs e)
         {
 
-            if (onlineStores.Keys.Contains(onlineStoresComboBox.Text) )
+            if (onlineStores.Keys.Contains(onlineStoresComboBox.Text))
             {
                 if (Regex.IsMatch(productName.Text, @"[а-яa-z]+\d*", RegexOptions.IgnoreCase))
                 {
@@ -257,17 +257,29 @@ namespace Lab8
 
         private void saveToFileButton_Click(object sender, EventArgs e)
         {
-            JsonSerializerOptions options = new JsonSerializerOptions
-            {
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                WriteIndented = true
-            };
-            string json = JsonConvert.SerializeObject(onlineStores);
+            var json = JsonConvert.SerializeObject(onlineStores);
             //byte[] bytes = Encoding.Default.GetBytes(json);
             //json = Encoding.UTF8.GetString(bytes);
             onlineStoreRichBox.Text = json;
             File.WriteAllText("file.json", json, Encoding.UTF8);
-            
+
         }
+
+        private void findOnlineStoreByAmountProductsButton_Click(object sender, EventArgs e)
+        {
+            onlineStoreRichBox.Text = String.Join(",", onlineStores.Values.Where(x => x.Products.Count == amountProductForSearch.Value).ToList());
+        }
+
+        private void findOnlineStoreByMinAmountProductsButton_Click(object sender, EventArgs e)
+        {
+            onlineStoreRichBox.Text = onlineStores.Values.OrderBy(x=>x.Products.Count).Min(x=>x).ToString();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            onlineStoreRichBox.Text = String.Join(",", onlineStores.Values.OrderBy(x => x.Products.Count).ToList());
+
+        }
+
     }
 }
